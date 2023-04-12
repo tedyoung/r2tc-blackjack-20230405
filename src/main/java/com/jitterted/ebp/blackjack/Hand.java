@@ -42,14 +42,33 @@ public class Hand {
         return handValue;
     }
 
-    Card faceUpCard() {
-        return cards.get(0);
-    }
-
     void display() {
         System.out.println(cards.stream()
                                 .map(Card::display)
                                 .collect(Collectors.joining(
                                        ansi().cursorUp(6).cursorRight(1).toString())));
+    }
+
+    boolean isBusted() {
+        return value() > 21;
+    }
+
+    boolean beats(Hand hand) {
+        // makes no sense if one of the hands it busted
+        return value() > hand.value();
+    }
+
+    boolean pushes(Hand dealerHand) {
+        return value() == dealerHand.value();
+    }
+
+    // DEALER ONLY METHODS
+
+    Card faceUpCard() {
+        return cards.get(0);
+    }
+
+    boolean shouldDealerHit() {
+        return value() <= 16;
     }
 }

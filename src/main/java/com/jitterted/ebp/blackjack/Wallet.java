@@ -13,6 +13,6 @@ public class Wallet {
     }
 
     public void addMoney(int depositAmount) {
-
+        isEmpty = false;
     }
 }

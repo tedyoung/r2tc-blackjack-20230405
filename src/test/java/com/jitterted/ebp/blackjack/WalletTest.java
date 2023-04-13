@@ -41,5 +41,16 @@ public class WalletTest {
         assertThat(wallet.balance())
                 .isEqualTo(11);
     }
+
+    @Test
+    void newWalletAdd7And8BalanceIs15() {
+        Wallet wallet = new Wallet();
+
+        wallet.addMoney(7);
+        wallet.addMoney(8);
+
+        assertThat(wallet.balance())
+                .isEqualTo(7 + 8);
+    }
 }
 

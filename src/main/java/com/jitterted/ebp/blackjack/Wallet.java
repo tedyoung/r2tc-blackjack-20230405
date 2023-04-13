@@ -16,7 +16,7 @@ public class Wallet {
 
     public void addMoney(int depositAmount) {
         isEmpty = false;
-        balance = depositAmount;
+        balance += depositAmount;
     }
 
     public int balance() {

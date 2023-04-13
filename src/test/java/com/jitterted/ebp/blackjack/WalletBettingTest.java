@@ -39,4 +39,12 @@ public class WalletBettingTest {
         assertThat(wallet.isEmpty())
                 .isTrue();
     }
+
+    @Test
+    void betMoreThanBalanceThrowsException() {
+        Wallet wallet = new Wallet();
+        wallet.addMoney(17);
+
+        assertThatThrownBy(() -> wallet.bet(18));
+    }
 }

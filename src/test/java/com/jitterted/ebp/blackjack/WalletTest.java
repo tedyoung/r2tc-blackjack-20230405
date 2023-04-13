@@ -57,7 +57,8 @@ public class WalletTest {
     void addNegativeMoneyThrowsException() throws Exception {
         Wallet wallet = new Wallet();
 
-        assertThatThrownBy(() -> wallet.addMoney(-1));
+        assertThatThrownBy(() -> wallet.addMoney(-1))
+                .isExactlyInstanceOf(IllegalArgumentException.class);
     }
 
 }

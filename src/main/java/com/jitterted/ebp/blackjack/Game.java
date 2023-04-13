@@ -180,4 +180,8 @@ public class Game {
     public int playerBalance() {
         return playerBalance;
     }
+
+    public void playerDeposits(int depositAmount) {
+        playerBalance += depositAmount;
+    }
 }

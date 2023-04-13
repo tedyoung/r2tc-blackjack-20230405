@@ -13,6 +13,9 @@ public class Wallet {
     }
 
     public void addMoney(int depositAmount) {
+        if (depositAmount <= -1) {
+            throw new RuntimeException();
+        }
         balance += depositAmount;
     }
 

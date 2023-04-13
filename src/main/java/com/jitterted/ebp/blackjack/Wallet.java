@@ -15,4 +15,8 @@ public class Wallet {
     public void addMoney(int depositAmount) {
         isEmpty = false;
     }
+
+    public int balance() {
+        return 0;
+    }
 }

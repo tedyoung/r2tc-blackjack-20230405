@@ -29,7 +29,7 @@ public class Wallet {
 
     public void bet(int betAmount) {
         if (betAmount > balance) {
-            throw new RuntimeException();
+            throw new IllegalStateException();
         }
         balance -= betAmount;
     }

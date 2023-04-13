@@ -45,6 +45,7 @@ public class WalletBettingTest {
         Wallet wallet = new Wallet();
         wallet.addMoney(17);
 
-        assertThatThrownBy(() -> wallet.bet(18));
+        assertThatThrownBy(() -> wallet.bet(18))
+                .isExactlyInstanceOf(IllegalStateException.class);
     }
 }

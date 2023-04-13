@@ -13,17 +13,18 @@ public class Wallet {
     }
 
     public void addMoney(int depositAmount) {
-        requireNonNegativeDepositAmount(depositAmount);
+        requireGreaterThanZero(depositAmount);
         balance += depositAmount;
+    }
+
+    private void requireGreaterThanZero(int depositAmount) {
+        if (depositAmount <= 0) {
+            throw new IllegalArgumentException();
+        }
     }
 
     public int balance() {
         return balance;
     }
 
-    private void requireNonNegativeDepositAmount(int depositAmount) {
-        if (depositAmount <= -1) {
-            throw new IllegalArgumentException();
-        }
-    }
 }
